@@ -46,7 +46,7 @@ process
 					} # [PSCustomObject]
 				
 					$processed 
-					
+
 					if($dependentAssemblies.Count -eq 0)
 					{
 						Write-Verbose ("Add ({0}) to dependentAssemblies processed" -f $processed.name)
@@ -58,6 +58,7 @@ process
 						{
 							# This name has already been processed, so remove the node
 							Write-Verbose ("Removing duplicate assemblyIdentity ({0})" -f $processed.namename)
+							$_.ParentNode
 							$_.ParentNode.RemoveChild($_)
 						} # if
 						else
